@@ -22,11 +22,20 @@
 
 .post {
     background-color: blueviolet;
-    margin: 1%;
+    margin: .5vw;
 
     border: 1px solid black;
     border-radius: 7px;
 
+    height: 20vh;
+    width: 18.5vw;
     
 
+    display: grid;
+    grid-template-columns: 9.25vw 9.25vw;
+    grid-template-rows: 5vh 5vh 5vh 5vh;
+}
+
+#hideId {
+    display: none;
 }

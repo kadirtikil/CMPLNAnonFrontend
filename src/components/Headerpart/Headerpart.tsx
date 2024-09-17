@@ -37,7 +37,7 @@ export default function Headerpart() {
             </div>
 
             <div className="postformcomponent" id='postformcomponent'>
-                <Postform Id={0} Nickname='' Description='' Topic=''/>
+                <Postform Id={0} Nickname='' Description='' Topic='' IdToClose='postformcomponent'/>
             </div>
         </>
 
