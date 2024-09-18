@@ -64,11 +64,11 @@ export default function Postboard() {
 
                     <div className='post' key={post.Id}>
                         <p id='hideId'>{post.Id}</p>
-                        <p>{post.Nickname}</p>
-                        <p>{post.Description}</p>
-                        <p>{post.Date}</p>
-                        <p>{post.Topic}</p>
-                        <button onClick={() => openUpdateForm(post)}>edit</button>
+                        <p id='postNickname'>{post.Nickname}</p>
+                        <p id='postDescription'>{post.Description}</p>
+                        <p id='postDate'>{post.Date}</p>
+                        <p id='postTopic'>{post.Topic}</p>
+                        <p id='editPostButton' onClick={() => openUpdateForm(post)}>edit</p>
                         <div className="postformcomponent" id='postformcomponentupdate'>
                             <Postform
                                 Id={postToUpdate.Id}

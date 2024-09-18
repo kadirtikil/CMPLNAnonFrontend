@@ -2,6 +2,9 @@ import './Headerpart.css';
 
 import Postform from '../Postform/Postform';
 
+
+import ButtonImage from '../../assets/cmplnherebutton.png'
+
 type Post = {
     Id: number,
     Nickname: string,
@@ -23,6 +26,19 @@ export default function Headerpart() {
         } 
     }
 
+    function closePostformContainer() {
+        try {
+            const temp = document.getElementById("postformcomponent");
+            if (temp ==null) {
+                console.log("Element doesnt exist.")
+            } else {
+                temp.style.display = 'none';
+            }
+        } catch (err) {
+            console.log(err);
+        } 
+    }
+
 
 
     return (
@@ -32,7 +48,7 @@ export default function Headerpart() {
                 <div className="headlineextra">Feelin' Bad? Make it even worse! By reading the complaints of others!</div>
 
                 <div className="addPost" >
-                    <button onClick={openPostformContainer}>Add Complaint</button>
+                    <p id='addComplaintButton' onClick={openPostformContainer}>COMPLAIN YOURSELF!</p>
                 </div>
             </div>
 

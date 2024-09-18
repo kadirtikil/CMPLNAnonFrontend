@@ -28,6 +28,8 @@ export default function Postform ({Id, Nickname, Description, Topic, IdToClose}:
     }
 
     return (
+        <>
+        <div className='underlayPostForm' onClick={closePostformContainer}></div>
         <div className="postformcontainer">
             <p className="headlinepostform">Complain about anything!</p>
             <form action="" method="post" className="formcontainer">
@@ -45,9 +47,9 @@ export default function Postform ({Id, Nickname, Description, Topic, IdToClose}:
                 
                 <button>Submit</button>
                 <button onClick={closePostformContainer}>close</button>
-            </form>
-                        
+            </form>       
         </div>
+        </>
     )
 
 }

@@ -24,6 +24,8 @@
     margin-bottom: auto;
     margin-right: auto;
     margin-left: auto;
+
+    z-index: 9999;
 }
 
 
@@ -46,5 +48,20 @@
 .headlinepostform{
     font-family: Arial, Helvetica, sans-serif; 
     font-size: 3ch;
+
+}
+
+.underlayPostForm {
+    background-color: rgba(0, 0, 0, 0.5);
+
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 
 }
