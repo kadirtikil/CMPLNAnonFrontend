@@ -11,10 +11,19 @@ type Post = {
     Topic: string,
 };
 
+const emptyPost: Post = {
+    Id: 0,
+    Nickname: '',
+    Email: '',
+    Description: '',
+    Date: '',
+    Topic: ''
+};
+
 export default function Postboard() {
     const [posts, setPosts] = useState<Post[]>([]);
     const [error, setError] = useState<Error | null>(null);
-    const [postToUpdate, setPostToUpdate] = useState<Post | undefined>(undefined);
+    const [postToUpdate, setPostToUpdate] = useState<Post>(emptyPost);
 
     useEffect(() => {
         fetch("http://localhost:8080/posts/test/16")
@@ -32,13 +41,14 @@ export default function Postboard() {
             });
     }, []);
 
-    function openUpdateForm() {
+    function openUpdateForm(post: Post) {
         try {
             const temp = document.getElementById("postformcomponentupdate")
 
             if (temp == null ) {
                 console.log("Element doesnt exist.")
             } else {
+                setPostToUpdate(post);
                 temp.style.display = 'block';
             }
         } catch (err) {
@@ -58,13 +68,13 @@ export default function Postboard() {
                         <p>{post.Description}</p>
                         <p>{post.Date}</p>
                         <p>{post.Topic}</p>
-                        <button onClick={() => openUpdateForm()}>edit</button>
+                        <button onClick={() => openUpdateForm(post)}>edit</button>
                         <div className="postformcomponent" id='postformcomponentupdate'>
                             <Postform
-                                Id={post.Id}
-                                Nickname={post.Nickname}
-                                Description={post.Description}
-                                Topic={post.Topic}
+                                Id={postToUpdate.Id}
+                                Nickname={postToUpdate.Nickname}
+                                Description={postToUpdate.Description}
+                                Topic={postToUpdate.Topic}
                                 IdToClose={`postformcomponentupdate`}
                             />
                         </div>
